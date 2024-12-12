@@ -1,0 +1,99 @@
+/* General card styling */
+.card {
+  width: 100%;
+  max-width: 600px;
+  margin: 1.5rem auto;
+  padding: 2rem;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #ffe0b2, #fff3e0);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  font-family: 'Roboto', sans-serif;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.25);
+}
+
+/* Header */
+.header h2 {
+  margin: 0;
+  font-size: 2rem;
+  color: #3e2723;
+  text-align: center;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Details Section */
+.details {
+  margin-top: 1.5rem;
+}
+
+.details h3 {
+  margin-bottom: 0.75rem;
+  font-size: 1.6rem;
+  color: #d84315;
+  text-transform: uppercase;
+  border-bottom: 3px solid #ffcc80;
+  padding-bottom: 0.25rem;
+}
+
+/* List Styling */
+.roles,
+.hobbies,
+.skills {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.roles li,
+.hobbies li,
+.skills li {
+  background: #ffe082;
+  color: #bf360c;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 1rem;
+  transition: transform 0.2s ease, background 0.3s ease;
+}
+
+.roles li:hover,
+.hobbies li:hover,
+.skills li:hover {
+  background: #ffd54f;
+  transform: scale(1.1);
+}
+
+/* Project Section */
+p {
+  margin: 0.5rem 0;
+  font-size: 1rem;
+  color: #5d4037;
+}
+
+p strong {
+  color: #4e342e;
+}
+
+.no-project {
+  color: #e53935;
+  font-weight: bold;
+  animation: fadeIn 1s ease-in-out;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

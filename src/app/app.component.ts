@@ -1,41 +1,26 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { TribeMemberComponent } from './components/tribe-member/tribe-member.component';
+import { TribeMemberMock } from './models';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, TribeMemberComponent],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  styleUrl: './app.component.scss',
 })
-export class AppComponent {
-  title = 'mock-together';
+export class AppComponent implements OnInit {
+  tribeMembers: TribeMemberMock[] = [];
 
+  // TODO APP CONFIG
 
-  constructor( ) {
+  /*  constructor(private tribeMemberService: TribeMemberMockService) {}*/
+
+  ngOnInit(): void {
+    /* this.tribeMemberService.tribeMembersGet().subscribe((members) => {
+      this.tribeMembers = members.tribeMembers!;
+      console.log(this.tribeMembers);
+    });*/
   }
-}
-
-
-interface TribeProject {
-  name: string,
-  startDate: Date,
-  endDate: Date,
-  budget: number,
-  customer: string;
-}
-
-enum Role {
-  FRONTEND,
-  BACKEND,
-  NAVIGATOR,
-}
-
-interface TribeMember {
-  firstName: string
-  lastName: string
-  project?: TribeProject
-  roles: Array<Role>
-  hobbies: Array<string>;
-  skills: Array<string>
 }

@@ -1,0 +1,33 @@
+<div class="card">
+  <div class="header">
+    <h2>{{ member.firstName }} {{ member.lastName }}</h2>
+  </div>
+  <div class="details">
+    <h3>Roles</h3>
+    <ul class="roles">
+      <li *ngFor="let role of member.roles">{{ role }}</li>
+    </ul>
+
+    <h3>Project</h3>
+    <div *ngIf="member.project; else noProject">
+      <p><strong>Name:</strong> {{ member.project.name }}</p>
+      <p><strong>Customer:</strong> {{ member.project.customer }}</p>
+      <p><strong>Budget:</strong> {{ member.project.budget | currency }}</p>
+      <p><strong>Start:</strong> {{ member.project.startDate | date }}</p>
+      <p><strong>End:</strong> {{ member.project.endDate | date }}</p>
+    </div>
+    <ng-template #noProject>
+      <p class="no-project">No project assigned</p>
+    </ng-template>
+
+    <h3>Hobbies</h3>
+    <ul class="hobbies">
+      <li *ngFor="let hobby of member.hobbies">{{ hobby }}</li>
+    </ul>
+
+    <h3>Skills</h3>
+    <ul class="skills">
+      <li *ngFor="let skill of member.skills">{{ skill }}</li>
+    </ul>
+  </div>
+</div>

@@ -1,3 +1,11 @@
 <main>
-  <h1>Hello mock-together!</h1>
+  <div style="display: flex; flex-wrap: wrap; gap:100px; align-items: center; justify-content: center">
+    @for(member of tribeMembers; track member.firstName) {
+      <app-tribe-member [member]="member"></app-tribe-member>
+    }
+
+    @if(tribeMembers.length === 0) {
+      <p style="font-size: 100px;">Nothing here</p>
+    }
+  </div>
 </main>
